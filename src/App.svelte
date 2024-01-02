@@ -4,6 +4,9 @@
   import { Button } from 'flowbite-svelte';
   import { Spinner } from 'flowbite-svelte';
 
+  function spin() {
+    document.getElementById("spinner").style.display = "inline-block";
+  }
 </script>
 
 <main>
@@ -11,14 +14,13 @@
 
   <div class="login-inputs">
     <label for="email">Email</label>
-    <input type="email" name="email" use:validators={[required, email]} />
+    <input type="email" name="email"/>
     <label for="password">Password</label>
-    <input type="password" name="password" use:validators={[required]} />
+    <input type="password" name="password"/>
   </div>
   
-  <Button>Login</Button>
-
-  <!-- <Spinner /> -->
+  <Button on:click={spin}>Login</Button>
+  <Spinner id="spinner"/>
 </main>
 
 <style>
