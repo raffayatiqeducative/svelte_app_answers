@@ -2,24 +2,23 @@
   export let name;
 
   import { Button } from 'flowbite-svelte';
+  import { Spinner } from 'flowbite-svelte';
+
 </script>
 
 <main>
   <h1>Login</h1>
-  <br>
 
-  <label for="email">Email</label>
-  <br>
-  <input type="email" name="email" use:validators={[required, email]} />
-  <br>
-  <label for="password">Password</label>
-  <br>
-  <input type="password" name="password" use:validators={[required]} />
-  <br><br>
-  <div>
-    <Button>Login</Button>
+  <div class="login-inputs">
+    <label for="email">Email</label>
+    <input type="email" name="email" use:validators={[required, email]} />
+    <label for="password">Password</label>
+    <input type="password" name="password" use:validators={[required]} />
   </div>
+  
+  <Button>Login</Button>
 
+  <!-- <Spinner /> -->
 </main>
 
 <style>
